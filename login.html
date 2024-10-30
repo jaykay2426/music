@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Login Page</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        <!-- Left side with image -->
+        <div class="login-image"></div>
+
+        <!-- Right side with login form -->
+        <div class="login-form">
+            <!-- Music bars animation container -->
+            <div class="music-bars">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <h1 class="login-title">Welcome Back!</h1>
+            <p class="login-subtitle">Log in to your account</p>
+            <form>
+                <input type="text" placeholder="Username" class="input-field">
+                <input type="password" placeholder="Password" class="input-field">
+                <button type="submit" class="login-button">Login</button>
+            </form>
+            <p class="switch-text">Don't have an account? <a href="signup.html">Sign Up</a></p>
+            <p class="forgot-password">Forgot Password? <a href="forgotpassword.html">Click here</a></p>
+        </div>
+    </div>
+
+    <!-- Custom Alert Box -->
+    <div id="custom-alert" class="custom-alert">
+        <div class="alert-content">
+            <span class="alert-message"></span>
+            <button id="alert-close" class="alert-close">OK</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

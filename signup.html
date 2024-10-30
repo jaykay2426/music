@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Signup Page</title>
+    <link rel="stylesheet" href="signup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="signup-container">
+        <!-- Left side with image -->
+        <div class="signup-image"></div>
+
+        <!-- Right side with signup form -->
+        <div class="signup-form">
+            <!-- Header with title and music bars -->
+            <div class="signup-header">
+                <div class="music-bars">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <h1 class="signup-title">Create Your Account</h1>
+            </div>
+
+            <!-- Scrollable content for form fields -->
+            <div class="signup-content">
+                <form id="signup-form">
+                    <input type="text" placeholder="Full Name" class="input-field" id="full-name">
+                    <input type="email" placeholder="Email" class="input-field" id="email"> 
+                    <input type="tel" placeholder="Phone Number" class="input-field" id="phone-number">
+                    <input type="password" placeholder="Password" class="input-field" id="password">
+                    <input type="password" placeholder="Confirm Password" class="input-field" id="confirm-password">
+                    <input type="text" placeholder="Address" class="input-field" id="address">
+                    
+                    <!-- File input for picture -->
+                    <label for="profilePicture" class="file-label">Upload Picture</label>
+                    <input type="file" id="profilePicture" class="file-input">
+    
+                    <!-- Dropdown for field selection -->
+                    <select class="input-field" aria-label="Select Field" id="field-selection">
+                        <option disabled selected>Select Field</option>
+                        <option>Music</option>
+                        <option>Filmming</option>
+                        <option>Animation</option>
+                    </select>
+                    
+                    <button type="submit" class="signup-button">Sign Up</button>
+                </form>
+                <p class="switch-text">Already have an account? <a href="login.html">Log In</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="custom-alert" class="custom-alert">
+        <div class="alert-content">
+            <span class="alert-message"></span>
+            <button id="alert-close" class="alert-close">OK</button>
+        </div>
+    </div>
+
+    <script src="signup.js"></script>
+</body>
+</html>

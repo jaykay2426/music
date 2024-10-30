@@ -1,0 +1,645 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --main-color: #00bcd4; /* Main Color */
+    --text-color: #333; /* Text Color */
+    --bg-color: #f7f7f7; /* Background Color */
+    --button-color: #ff4081; /* Button Color */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Navigation Bar */
+.navbar {
+    background: #1e1e2d;
+    height: 50px;
+    color: #fff;
+    padding: 1rem 0;
+    font-weight: bold;
+    font-size: 14px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease;
+}
+
+.navbar h1 {
+    float: left;
+    font-size: 2rem;
+}
+
+.nav-links {
+    list-style: none;
+    float: right;
+}
+
+.nav-links li {
+    display: inline;
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #00bcd4;
+}
+
+/* Hero Section */
+.hero {
+    background: url('images/music.jfif') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 1s ease;
+    color: #fff;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: slideInFromBottom 1s ease;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    animation: slideInFromBottom 1.5s ease;
+}
+
+.cta-button {
+    background: #00bcd4;
+    color: #fff;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #0097a7;
+}
+
+/* About Us Section */.about {
+    padding: 4rem 0;
+    text-align: center;
+    animation: fadeIn 1s ease forwards;
+    position: relative;
+    overflow: hidden; /* Hide any overflowing bubbles */
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    margin-top: -240px;
+    pointer-events: none; /* Allow mouse interaction with text */
+    opacity: 0.7; /* Slight transparency */
+    transition: transform 0.3s ease; /* Smooth scaling on hover */
+    animation: float 3s infinite alternate; /* Float animation */
+}
+
+.bubble1 {
+    background: #00bcd4;
+    width: 50px;
+    height: 50px;
+}
+
+.bubble2 {
+    background: #ff4081;
+    width: 30px;
+    height: 30px;
+}
+
+.bubble3 {
+    background: #ffc107;
+    width: 40px;
+    height: 40px;
+}
+
+.bubble4 {
+    background: #673ab7;
+    width: 60px;
+    height: 60px;
+}
+
+/* Add floating effect to bubbles */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px); /* Bubbles float up */
+    }
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    animation: slideInFromLeft 1s ease forwards;
+    position: relative; 
+    overflow: hidden; 
+}
+
+.about p {
+    margin: 1rem 0;
+    opacity: 0; 
+    animation: fadeInUp 1s ease forwards; 
+    animation-delay: 0.5s; 
+    position: relative; 
+    overflow: hidden; 
+}
+
+/* Staggered animation delays for paragraphs */
+.about p:nth-child(2) {
+    animation-delay: 1s; 
+}
+
+.about p:nth-child(3) {
+    animation-delay: 1.5s; 
+}
+
+/* Additional Animation Keyframes */
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px); 
+        opacity: 0; 
+    }
+    to {
+        transform: translateY(0); 
+        opacity: 1; 
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+/* Services Section */
+.services {
+    background: url(/images/back.avif);
+    padding: 4rem 0;
+    animation: fadeIn 1s ease;
+}
+
+.services h2 {
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    animation: slideInFromTop 1s ease;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    background: #2c2c3c;
+    color: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    margin: 1rem;
+    flex: 0 1 20%;
+    position: relative; /* For absolute positioning of pseudo-elements */
+    overflow: hidden; /* Hide overflow for animated elements */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scaling */
+    animation: cardFadeIn 1s ease forwards;
+    opacity: 0; /* Initially hidden */
+}
+
+/* Unique animation for card entry */
+@keyframes cardFadeIn {
+    0% {
+        transform: translateY(20px); /* Start below */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: translateY(0); /* End at original position */
+        opacity: 1; /* End visible */
+    }
+}
+
+/* Animation on hover */
+.service-card:hover {
+    transform: scale(1.05) rotate(2deg); /* Slight scale and rotation for depth */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Shadow for depth effect */
+}
+
+/* Animated border effect */
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    background: linear-gradient(45deg, rgba(255, 0, 150, 0.5), rgba(0, 204, 255, 0.5));
+    transform: scale(0);
+    transition: transform 0.3s ease;
+    z-index: 0; /* Place behind the content */
+}
+
+.service-card:hover::before {
+    transform: scale(1); /* Scale border effect on hover */
+}
+
+.service-card h3 {
+    position: relative; /* For pseudo-element positioning */
+    z-index: 1; /* Ensure content is above the gradient */
+}
+
+.service-card p {
+    position: relative; /* For pseudo-element positioning */
+    z-index: 1; /* Ensure content is above the gradient */
+}
+
+/* Staggered animation for cards */
+.service-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.service-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.service-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.service-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* Additional Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* Testimonials Section */
+.testimonials {
+    padding: 4rem 0;
+    background: #f0f0f0;
+    text-align: center;
+    animation: fadeInSection 1.5s ease-out;
+}
+
+.testimonials h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    animation: slideInFromLeft 1.2s ease-out;
+}
+
+.testimonial-slider {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    animation: slideInFromRight 1.5s ease;
+}
+
+.testimonial {
+    flex: 1;
+    padding: 2rem;
+    background: url(/images/backlife.avif);
+    border-radius: 15px;
+    margin: 1rem;
+    opacity: 0.9;
+    transform-origin: center;
+    animation: scaleIn 1.3s ease forwards, floatEffect 8s infinite ease-in-out;
+    transition: transform 0.4s ease;
+}
+
+.testimonial:hover {
+    transform: scale(1.05); /* Slight scale on hover */
+}
+
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 1rem;
+    animation: fadeInText 1.5s ease-out forwards;
+    opacity: 0;
+}
+
+.testimonial h4 {
+    font-weight: bold;
+    color: #333;
+    animation: slideInText 1.2s ease-out forwards;
+    opacity: 0;
+}
+
+/* Keyframe Animations */
+
+@keyframes fadeInSection {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+    0% { transform: translateX(-50px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInFromRight {
+    0% { transform: translateX(50px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+    0% { transform: scale(0.95); opacity: 0; }
+    100% { transform: scale(1); opacity: 0.9; }
+}
+
+@keyframes floatEffect {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+@keyframes fadeInText {
+    0% { opacity: 0; transform: translateY(15px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInText {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Carousel Section */
+.carousel {
+    padding: 4rem 0;
+    text-align: center;
+    animation: fadeIn 1s ease;
+}
+
+.carousel-wrapper {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-item {
+    flex: 0 0 20%;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item img {
+    width: 100%;
+    border-radius: 15px;
+    animation: zoomIn 0.5s ease;
+}
+
+.carousel-button {
+    background: #00bcd4;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    padding: 1rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background 0.3s ease;
+}
+
+.carousel-button:hover {
+    background: #0097a7;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+/* Sign Up Section */
+.contact {
+    position: relative; /* Positioning for absolute child elements */
+    height: 897px; /* Set height for the section */
+    overflow: hidden; /* Hide overflow to maintain aesthetics */
+    display: flex; /* Center content vertically and horizontally */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+}
+
+.background-video {
+    position: absolute; /* Position video absolutely */
+    top: 50%; /* Center video vertically */
+    left: 50%; /* Center video horizontally */
+    min-width: 100%; /* Cover the entire section */
+    min-height: 100%; /* Cover the entire section */
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+    transform: translate(-50%, -50%); /* Center video */
+    z-index: -1; /* Send the video behind content */
+}
+
+.contact h2 {
+    margin-bottom: 3rem;
+    color: white;
+    font-size: 3.5rem;
+    position: relative; /* Ensure heading is above the video */
+    z-index: 1; /* Bring heading above video */
+}
+
+.contact form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin: 5rem 0;
+    text-align: center;
+    position: relative; /* Ensure form is above the video */
+    z-index: 1; /* Bring form above video */
+}
+
+.contact form .input-box input,
+.contact form textarea {
+    width: 100%;
+    padding: 2.5rem;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    border-radius: 2rem;
+    border: 2px solid green;
+    margin: 1.5rem 0;
+    resize: none;
+}
+
+.contact .btn {
+    background: linear-gradient(25deg, black, black, white, black, black);
+    width: 50%;
+    height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff; /* Change the text color to ensure it stands out against the gradient */
+    border: none; /* Optional: remove border for a cleaner look */
+    border-radius: 20px; /* Rounded corners */
+    transition: background 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.contact .btn:hover {
+    background: linear-gradient(45deg, rgba(0, 100, 255, 1), rgba(0, 174, 255, 1)); /* Darker gradient on hover */
+}
+
+
+.contact textarea {
+    width: 80%;
+    height: 100px;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    transition: border 0.3s ease;
+}
+
+.contact textarea:focus {
+    border: 2px solid #00bcd4;
+}
+
+
+/* Footer */
+.footer {
+    background: #1e1e2d;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.footer p {
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    list-style: none;
+}
+
+.social-links li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
