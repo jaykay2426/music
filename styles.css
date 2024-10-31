@@ -18,7 +18,92 @@ body {
     color: #333;
 }
 
+body.loaded .contain {
+    opacity: 1;
+    transform: translateX(0);
+
+}
+
+.navbar {
+    position: relative; /* Set relative positioning */
+    z-index: 500; /* Ensure it’s below the preloader */
+    visibility: hidden; /* Hide navbar while preloader is active */
+}
+
+/* Make navbar visible when content is loaded */
+body.loaded .navbar {
+    visibility: visible; /* Show navbar when content is loaded */
+}
+
+body.loaded .preloader-overlay {
+    display: none;
+}
+
+
+.preloader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1e1e2d; /* Dark background for contrast */
+    display: flex; /* Center content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    z-index: 1000; /* Ensure it's on top of other elements */
+}
+
+body.loaded .preloader-overlay {
+    display: none;
+}
+
+.music-bars {
+    display: flex; /* Align bars in a row */
+    justify-content: center; /* Center the bars */
+    margin-top: 320px; /* Position the bars appropriately */
+    gap: 0.3rem; /* Space between bars */
+    position: absolute; /* Allows for flexible positioning */
+    top: 20px; /* Position from the top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for left alignment */
+}
+
+/* Individual Bar */
+.bar {
+    width: 5px; /* Width of the bar */
+    height: 15px; /* Initial height of the bar */
+    background-color: var(--main-color); /* Use main color variable */
+    animation: pulse 0.5s ease-in-out infinite alternate; /* Animation effect */
+}
+
+
+/* Animation delay for each bar */
+.bar:nth-child(1) { animation-delay: 0.1s; }
+.bar:nth-child(2) { animation-delay: 0.2s; }
+.bar:nth-child(3) { animation-delay: 0.3s; }
+.bar:nth-child(4) { animation-delay: 0.4s; }
+.bar:nth-child(5) { animation-delay: 0.5s; }
+
+/* Pulse Animation for bars */
+@keyframes pulse {
+    from { height: 15px; }
+    to { height: 35px; } /* Height increase for animation effect */
+}
+
+/* Body Loaded State */
+body.loaded .preloader-overlay {
+    display: none; /* Hide preloader when content is loaded */
+}
+
+body.loaded .contain {
+    opacity: 1; /* Show main content */
+    transform: translateX(0); /* Reset position for main content */
+}
+
 .container {
+    opacity: 1; /* Initially hidden */
+    transform: translateX(-50px); /* Slide in from left */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
     width: 90%;
     max-width: 1200px;
     margin: auto;
@@ -101,7 +186,8 @@ body {
     background: #0097a7;
 }
 
-/* About Us Section */.about {
+/* About Us Section */
+.about {
     padding: 4rem 0;
     text-align: center;
     animation: fadeIn 1s ease forwards;
@@ -539,7 +625,7 @@ body {
 }
 
 .contact .btn:hover {
-    background: linear-gradient(45deg, rgba(0, 100, 255, 1), rgba(0, 174, 255, 1)); /* Darker gradient on hover */
+    background: linear-gradient(25deg,white, black, white ); /* Darker gradient on hover */
 }
 
 
@@ -641,5 +727,142 @@ body {
     to {
         transform: scale(1);
         opacity: 1;
+    }
+}
+
+
+
+
+
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+    /* General Layout Adjustments */
+    .container {
+        width: 95%;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+        height: auto;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .navbar h1 {
+        font-size: 1.5rem;
+        float: none;
+    }
+
+    .nav-links {
+        float: none;
+        margin-top: 1rem;
+    }
+
+    .nav-links li {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    /* Hero Section */
+    .hero {
+        height: 400px;
+        padding: 2rem 1rem;
+    }
+
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+    }
+
+    /* About Us Section */
+    .about h2 {
+        font-size: 2rem;
+    }
+
+    .about p {
+        font-size: 1rem;
+    }
+
+    /* Services Section */
+    .services h2 {
+        font-size: 2rem;
+    }
+
+    .service-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card {
+        flex: 1 1 80%;
+        margin: 1rem 0;
+    }
+
+    /* Testimonials Section */
+    .testimonials h2 {
+        font-size: 2rem;
+    }
+
+    .testimonial-slider {
+        flex-direction: column;
+        overflow: visible;
+    }
+
+    .testimonial {
+        margin: 1rem 0;
+        padding: 1.5rem;
+    }
+
+    /* Carousel Section */
+    .carousel {
+        padding: 2rem 0;
+    }
+
+    .carousel-item {
+        flex: 0 0 100%;
+        margin: 1rem 0;
+    }
+
+    .carousel-button {
+        padding: 0.8rem;
+    }
+
+    /* Contact Section */
+    .contact h2 {
+        font-size: 2.5rem;
+    }
+
+    .contact form {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .contact form .input-box input,
+    .contact form textarea {
+        width: 100%;
+    }
+
+    .contact .btn {
+        width: 100%;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 1.5rem 1rem;
+    }
+
+    .footer p {
+        font-size: 1rem;
+    }
+
+    .social-links li {
+        margin: 0.5rem;
     }
 }

@@ -1,0 +1,130 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+}
+
+img{
+    height: 600px;
+}
+
+.access{
+    color: #777777;
+    font-size:10.5px;
+    margin-left: -425px;
+    margin-top: 111px;
+    background: white;
+    height: 10px;
+    width: 300px;
+}
+
+.amount{
+    color: #6478B9;
+    font-size:12px;
+    margin-left: -249px;
+    margin-top: 142px;
+    background: white;
+    height: 20px;
+    width: 100px;
+}
+
+.INTER-BANK{
+    color: #6478B9;
+    font-size:10px;
+    margin-left: -100px;
+    margin-top: 179px;
+    background: white;
+    height: 10px;
+    width: 100px;
+}
+
+.date{
+    color: #6478B9;
+    font-size:10px;
+    margin-left: -101px;
+    margin-top: 210.5px;
+    background: white;
+    height: 10px;
+    width: 100px;
+}
+
+.sender{
+    color: #6478B9;
+    font-size:9.7px;
+    margin-left: -100px;
+    margin-top: 244px;
+    background: white;
+    height: 10px;
+    width: 200px;
+}
+
+.beneficiary{
+    color: #6478B9;
+    font-size:9.7px;
+    margin-left: -200px;
+    margin-top: 277px;
+    background: white;
+    height: 13px;
+    width: 200px;
+}
+
+.benef{
+    color: #6478B9;
+    font-size:10px;
+    margin-left: -199px;
+    margin-top: 302px;
+    background: white;
+    height: 10px;
+    width: 100px;
+
+}
+
+.bene{
+    color: #6478B9;
+    font-size:10px;
+    margin-left: -100px;
+    margin-top: 325.7px;
+    background: white;
+    height: 10px;
+    width: 100px;
+}
+
+.ref{
+    color: #6478B9;
+    font-size:9.3px;
+    margin-left: -100px;
+    margin-top: 377px;
+    background: white;
+    height: 10px;
+    width: 200px;
+}
+
+.session{
+    color: #6478B9;
+    font-size:9.5px;
+    margin-left: -200px;
+    margin-top: 414px;
+    background: white;
+    height: 10px;
+    width: 210px;
+}
+
+.status{
+    color: #6478B9;
+    font-size:9.5px;
+    margin-left: -210px;
+    margin-top: 447px;
+    background: white;
+    height: 10px;
+    width: 230px;
+}
+
+.f p{
+    color: red;
+    font-size:8px;
+    margin-left: -368px;
+    margin-top: 480.9px;
+    background: black;
+    height:10px;
+    width: 370px;
+}

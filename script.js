@@ -1,3 +1,28 @@
+// Add 'loaded' class to body after 3 seconds
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        document.body.classList.add('loaded');
+    }, 3000); // 3-second delay
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(() => {
+        document.body.classList.add("loaded");
+    }, 3000); // 3 seconds delay for the preloader
+});
+
+
+
+
+
+
+
+
+
+
+
 // Login form JavaScript file
 document.addEventListener('DOMContentLoaded', function () {
     const loginForm = document.querySelector('.login-form form');
@@ -476,3 +501,9 @@ document.addEventListener('DOMContentLoaded', () => {
         customAlert.style.display = 'none';
     });
 });
+
+
+
+
+
+
