@@ -167,6 +167,7 @@ body.loaded .preloader-overlay {
     color: #bbb;
     font-size: 0.9rem;
     text-align: center;
+    margin-bottom: 100px;
 }
 
 .switch-text a {
