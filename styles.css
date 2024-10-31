@@ -422,7 +422,7 @@ body.loaded .contain {
 /* Testimonials Section */
 .testimonials {
     padding: 4rem 0;
-    background: #f0f0f0;
+    background: #d50d0d46;
     text-align: center;
     animation: fadeInSection 1.5s ease-out;
 }
@@ -784,35 +784,43 @@ body.loaded .contain {
     /* About Us Section */
     .about h2 {
         font-size: 2rem;
+        align-items: center;
+        margin-left: 90px;
     }
 
     .about p {
         font-size: 1rem;
+        margin-left: 100px;
     }
 
     /* Services Section */
     .services h2 {
         font-size: 2rem;
+        margin-left: 100px;
     }
 
     .service-cards {
         flex-direction: column;
         align-items: center;
+        margin-left: 70px;
     }
 
     .service-card {
         flex: 1 1 80%;
         margin: 1rem 0;
+        margin-left: 40px;
     }
 
     /* Testimonials Section */
     .testimonials h2 {
         font-size: 2rem;
+        margin-left: 100px;
     }
 
     .testimonial-slider {
         flex-direction: column;
         overflow: visible;
+        margin-left: 100px;
     }
 
     .testimonial {
@@ -823,6 +831,7 @@ body.loaded .contain {
     /* Carousel Section */
     .carousel {
         padding: 2rem 0;
+        margin-left: 100px;
     }
 
     .carousel-item {
@@ -846,7 +855,7 @@ body.loaded .contain {
 
     .contact form .input-box input,
     .contact form textarea {
-        width: 100%;
+        width: 80%;
     }
 
     .contact .btn {
